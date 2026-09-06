@@ -22,7 +22,8 @@
 <style>
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #FBF7F3; color: #35304A; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; -webkit-font-smoothing: antialiased; }
-  html, body { overflow-x: hidden; max-width: 100%; }
+  html { overflow-x: clip; }
+  body { overflow-x: clip; max-width: 100%; }
   img, svg { max-width: 100%; }
   * { box-sizing: border-box; }
   a { color: #8B5FA8; text-decoration: none; }
@@ -36,21 +37,33 @@
     [data-navlinks] { display: none !important; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start !important; gap: 20px !important; background: #FCEBDE; padding: 24px; border-bottom: 1px solid #F2D9C6; box-shadow: 0 16px 34px rgba(53,48,74,0.14); }
     [data-navlinks][data-open="true"] { display: flex !important; }
   }
+  @media (max-width: 900px) {
+    [data-benefits], #about > div, #program > div, #testimonials > div > div, #notes > div > div, #method article { grid-template-columns: 1fr !important; }
+    #method article > div { padding: 32px 26px !important; }
+    #method article img { border-radius: 26px 26px 0 0 !important; height: 220px !important; }
+  }
+  /* mobile-type */
+  @media (max-width: 900px) {
+    .ms17 { font-size: 13.6px !important; }
+    .ms19 { font-size: 15.2px !important; }
+    .ms20 { font-size: 16px !important; }
+    .ms24 { font-size: 19.2px !important; }
+    .ms30 { font-size: 24px !important; }
+    .ms36 { font-size: 28.8px !important; }
+    .ms38 { font-size: 30.4px !important; }
+    .ms40 { font-size: 32px !important; }
+    .ms42 { font-size: 33.6px !important; }
+    .ms56 { font-size: 44.8px !important; }
+  }
   @keyframes btnPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
   .anim-on [data-zoom] { opacity: 0; transform: scale(0.86); transition: opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1); }
   [data-zoom].is-in { opacity: 1; transform: none; }
   .anim-on [data-slide] { opacity: 0; transform: translateY(18px) scale(0.97); transition: opacity 1s ease, transform 1s cubic-bezier(.22,.61,.36,1); }
   [data-slide].is-in { opacity: 1; transform: none; }
-  .anim-on [data-fade] { opacity: 0; transition: opacity 1.4s ease; }
-  [data-fade].is-in { opacity: 1; }
+  .anim-on [data-fade] { opacity: 0; transform: translateY(16px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(.22,.61,.36,1); }
+  [data-fade].is-in { opacity: 1; transform: none; }
   .anim-on [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1); }
   [data-reveal].is-in { opacity: 1; transform: none; }
-  [data-flip] { transform-origin: top center; perspective: 1600px; }
-  [data-flip] > * { backface-visibility: hidden; }
-  @media (min-width: 761px) {
-    .anim-on [data-flip] { opacity: 0; transform: perspective(1600px) rotateX(-88deg); transition: transform .85s cubic-bezier(.2,.7,.3,1), opacity .5s ease; }
-    [data-flip].is-in { opacity: 1; transform: perspective(1600px) rotateX(0deg); }
-  }
   @container (max-width: 760px) {
     [data-stats] { grid-template-columns: 1fr !important; }
     [data-stats] > div { padding-left: 0 !important; padding-right: 0 !important; justify-content: flex-start !important; text-align: left; }
@@ -161,18 +174,18 @@
     <div style="position:relative; z-index:1">
       <img src="assets/hero-career-change.webp" width="1536" height="1024" alt="40 歲女性上班族坐在筆電前望向窗外，思考中年轉職與第二職涯方向" style="position:absolute; top:0; left:0; right:0; width:100%; height:calc(100% - 80px); object-fit:cover; object-position:78% 28%" />
       
-      <div style="position:relative; max-width:1160px; margin:0 auto; padding:36px 24px 0">
+      <div style="position:relative; width:90%; max-width:1160px; margin:0 auto; padding:36px 0 0">
         <div style="max-width:500px; margin:0 auto 0 0; background:rgba(255,255,255,0.82); backdrop-filter:blur(6px); border-radius:26px; padding:44px 48px 40px; text-align:left; box-shadow:0 30px 70px rgba(53,48,74,0.18)">
           <span style="display:inline-block; padding:7px 18px; border-radius:999px; background:#FDEDE3; color:#C4683F; font-size:13px; letter-spacing:0.04em; margin-bottom:20px; white-space:nowrap">給 38～50 歲的職涯中段工作者</span>
-          <h1 style="font-size:40px; line-height:1.42; font-weight:700; margin:0 0 16px; letter-spacing:0.01em">工作做了十幾年，<br /><span style="color:#8B5FA8">想轉職</span>卻<span style="color:#E8926A">不知道自己還能去哪裡</span>？</h1>
-          <h2 style="font-size:19px; line-height:1.85; font-weight:500; color:#4A4360; margin:0 0 14px; max-width:620px">你不是沒有能力，只是還沒看懂，過去累積的經驗可以帶你走向哪裡。</h2>
+          <h1 class="ms40" style="font-size:40px; line-height:1.42; font-weight:700; margin:0 0 16px; letter-spacing:0.01em">工作做了十幾年，<br /><span style="color:#8B5FA8">想轉職</span>卻<span style="color:#E8926A">不知道自己還能去哪裡</span>？</h1>
+          <h2 class="ms19" style="font-size:19px; line-height:1.85; font-weight:500; color:#4A4360; margin:0 0 14px; max-width:620px">你不是沒有能力，只是還沒看懂，過去累積的經驗可以帶你走向哪裡。</h2>
           <p style="font-size:15.5px; line-height:2; color:#6B6480; margin:0 0 28px; max-width:560px">給 38～50 歲、已經走到職涯中段，卻開始懷疑「難道未來十年還要繼續這樣？」的你。</p>
           <a href="live.html" data-btn="1" style="display:inline-block; padding:17px 40px; border-radius:999px; background:#E8926A; color:#fff; font-size:16.5px; font-weight:500; letter-spacing:0.02em; box-shadow:0 12px 28px rgba(232,146,106,0.32)" class="h2">報名免費直播課程</a>
         </div>
       </div>
     </div>
     <div style="background:#E8926A; margin-top:-80px; position:relative; z-index:0">
-      <div data-benefits="1" style="max-width:1160px; margin:0 auto; padding:120px 24px 88px; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0">
+      <div data-benefits="1" style="max-width:1160px; margin:0 auto; padding:120px 24px 88px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px, 100%), 1fr)); gap:0">
         <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:26px; padding:0 24px">
           <span style="width:132px; height:132px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center">
             <svg width="58" height="58" viewBox="0 0 48 48" fill="none" stroke="#D97F55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -183,7 +196,7 @@
               <path d="M32 30l2.5 2.5L39 28" />
             </svg>
           </span>
-          <span style="font-size:20px; font-weight:700; color:#ffffff; line-height:1.8">挖掘可轉移能力的盤點技巧</span>
+          <span class="ms17" style="font-size:17px; font-weight:700; color:#ffffff; line-height:1.8">挖掘可轉移能力的盤點技巧</span>
         </div>
         <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:26px; padding:0 24px; border-left:1px solid rgba(255,255,255,0.35); border-right:1px solid rgba(255,255,255,0.35)">
           <span style="width:132px; height:132px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center">
@@ -196,7 +209,7 @@
               <path d="M8 34h6M34 34h6" />
             </svg>
           </span>
-          <span style="font-size:20px; font-weight:700; color:#ffffff; line-height:1.8">評估第二職涯的選擇方法</span>
+          <span class="ms17" style="font-size:17px; font-weight:700; color:#ffffff; line-height:1.8">評估第二職涯的選擇方法</span>
         </div>
         <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:26px; padding:0 24px">
           <span style="width:132px; height:132px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center">
@@ -208,20 +221,20 @@
               <path d="M42 40H26" />
             </svg>
           </span>
-          <span style="font-size:20px; font-weight:700; color:#ffffff; line-height:1.8">讓資深經歷加分的面試技巧</span>
+          <span class="ms17" style="font-size:17px; font-weight:700; color:#ffffff; line-height:1.8">讓資深經歷加分的面試技巧</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="pain" style="background:#FBF7F3">
-    <div style="max-width:1160px; margin:0 auto; padding:96px 24px">
-      <h2 style="font-size:42px; font-weight:700; text-align:center; color:#8B5FA8; margin:0 0 56px">你也這樣想嗎？</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:32px">
+    <div style="width:90%; max-width:1160px; margin:0 auto; padding:96px 0">
+      <h2 class="ms42" style="font-size:42px; font-weight:700; text-align:center; color:#8B5FA8; margin:0 0 56px">你也這樣想嗎？</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(290px, 100%), 1fr)); gap:32px">
         <article data-reveal="1" style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10)">
           <img src="assets/pain-01-alone.webp" width="760" height="760" alt="插畫：中年女性抱膝坐著望向遠方城市，擔心自己轉職太晚" style="width:100%; height:230px; display:block; object-fit:cover; object-position:center 35%; background:#F6F1EC" />
           <div style="padding:30px 30px 34px">
-            <h3 style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">「都這個年紀了，轉職太晚了」</h3>
+            <h3 class="ms20" style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">都這個年紀了，轉職太晚了</h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">看到喜歡的職缺，第一個想到的卻是年齡。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">擔心企業更想要年輕人，也怕自己沒有重新開始的本錢。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">所以明明想走，卻遲遲不敢跨出去。</p>
@@ -230,7 +243,7 @@
         <article data-reveal="1" style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10)">
           <img src="assets/pain-02-doubt.webp" width="760" height="760" alt="插畫：女性在筆電前托腮思考，腦中出現混亂與晴朗兩種想像" style="width:100%; height:230px; display:block; object-fit:cover; object-position:center 35%; background:#F6F1EC" />
           <div style="padding:30px 30px 34px">
-            <h3 style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">「換跑道，就要從零開始」</h3>
+            <h3 class="ms20" style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">換跑道，就要從零開始</h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">做了十幾年的工作，一想到跨領域，就覺得過去全部白費。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">但你累積的不只有職稱，還有很多能帶到下一站的能力。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">你需要的不是歸零，而是重新看懂自己的價值。</p>
@@ -239,7 +252,7 @@
         <article data-reveal="1" style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10)">
           <img src="assets/pain-03-crossroad.webp" width="760" height="760" alt="插畫：女性站在岔路口看著方向指示牌，不確定下一份工作能做什麼" style="width:100%; height:230px; display:block; object-fit:cover; object-position:center 35%; background:#F6F1EC" />
           <div style="padding:30px 30px 34px">
-            <h3 style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">「我根本不知道自己還能做什麼」</h3>
+            <h3 class="ms20" style="font-size:20px; font-weight:600; line-height:1.6; margin:0 0 16px">我根本不知道自己還能做什麼</h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">現在的工作很熟悉，反而更難想像其他可能。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">打開求職網站看了一圈，每個職缺都覺得跟自己有距離。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">不是你沒有選擇，而是還沒找到重新定位自己的方法。</p>
@@ -250,7 +263,7 @@
   </section>
 
   <section id="about" style="background:#ffffff">
-    <div style="max-width:1160px; margin:0 auto; padding:96px 24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:64px; align-items:start">
+    <div style="max-width:1160px; margin:0 auto; padding:96px 24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px, 100%), 1fr)); gap:64px; align-items:start">
       <div style="display:flex; flex-direction:column; align-items:center; gap:44px">
         <div style="position:relative; width:100%; max-width:440px; aspect-ratio:1/1; border-radius:50%; padding:26px; background:linear-gradient(140deg,rgba(203,165,218,0.15) 0%,rgba(203,165,218,0.55) 45%,#B98BCE 100%)">
           <div style="position:absolute; inset:2.5px; border-radius:50%; background:#ffffff"></div>
@@ -259,7 +272,7 @@
           </svg>
           <div style="position:absolute; inset:26px; border-radius:50%; padding:10px; background:#fff; box-shadow:0 18px 44px rgba(139,95,168,0.16)">
             <div style="position:absolute; inset:10px; border-radius:50%; overflow:hidden">
-              <img src="assets/mia-profile.webp" width="1000" height="1200" alt="職涯教練林米雅 Mia Lin 形象照，坐在辦公桌前微笑" style="width:100%; height:100%; display:block; object-fit:cover; object-position:center 22%" />
+              <img src="assets/mia-profile.webp" width="1000" height="1200" alt="職涯教練林米雅 Mia Lin 形象照，坐在辦公桌前微笑" style="width:100%; height:100%; display:block; object-fit:cover; object-position:38% 22%" />
             </div>
           </div>
         </div>
@@ -269,7 +282,7 @@
         </div>
       </div>
       <div>
-        <h2 style="font-size:42px; font-weight:700; color:#8B5FA8; margin:0 0 14px">嗨，我是 Mia</h2>
+        <h2 class="ms42" style="font-size:42px; font-weight:700; color:#8B5FA8; margin:0 0 14px">嗨，我是 Mia</h2>
         <p style="font-size:18px; font-weight:700; color:#35304A; margin:0 0 6px">林米雅 Mia Lin</p>
         <p style="font-size:14.5px; color:#8B5FA8; margin:0 0 4px">前科技業 HRBP｜ICF ACC 教練</p>
         <p style="font-size:14.5px; color:#8B5FA8; margin:0 0 28px">12 年企業人才發展經驗</p>
@@ -286,21 +299,21 @@
           <p style="font-size:16.5px; line-height:1.95; letter-spacing:-0.045em; color:#35304A; font-weight:700; margin:0 0 12px">轉職不是把過去歸零，而是看懂你已經擁有什麼，再把它帶到更適合你的地方。</p>
           <p style="font-size:15.5px; line-height:1.95; letter-spacing:-0.045em; color:#4A4360; margin:0">這也是我現在想陪你一起找到的下一步。</p>
         </div>
-        <div data-stats="1" style="container-type:inline-size; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); border-top:1px solid #E5D9E9; margin-top:8px">
+        <div data-stats="1" style="container-type:inline-size; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px, 100%), 1fr)); border-top:1px solid #E5D9E9; margin-top:8px">
           <div style="border-bottom:1px solid #E5D9E9; padding:26px 24px 26px 0; display:flex; align-items:baseline; gap:14px">
-            <span data-count="12" data-suffix="+" style="font-size:56px; line-height:1; font-weight:700; color:#8B5FA8; letter-spacing:-0.02em">0+</span>
+            <span data-count="12" data-suffix="+" class="ms56" style="font-size:56px; line-height:1; font-weight:700; color:#8B5FA8; letter-spacing:-0.02em">0+</span>
             <span style="font-size:15.5px; line-height:1.7; color:#4A4360">年企業人才發展經驗</span>
           </div>
           <div style="border-bottom:1px solid #E5D9E9; padding:26px 0 26px 24px; display:flex; align-items:baseline; gap:14px">
-            <span data-count="300" data-suffix="+" style="font-size:56px; line-height:1; font-weight:700; color:#8B5FA8; letter-spacing:-0.02em">0+</span>
+            <span data-count="300" data-suffix="+" class="ms56" style="font-size:56px; line-height:1; font-weight:700; color:#8B5FA8; letter-spacing:-0.02em">0+</span>
             <span style="font-size:15.5px; line-height:1.7; color:#4A4360">位職涯對談與陪伴學員</span>
           </div>
           <div style="border-bottom:1px solid #E5D9E9; padding:26px 24px 26px 0; display:flex; align-items:baseline; gap:14px">
-            <span data-count="85" data-suffix="%" style="font-size:56px; line-height:1; font-weight:700; color:#C4683F; letter-spacing:-0.02em">0%</span>
+            <span data-count="85" data-suffix="%" class="ms56" style="font-size:56px; line-height:1; font-weight:700; color:#C4683F; letter-spacing:-0.02em">0%</span>
             <span style="font-size:15.5px; line-height:1.7; color:#4A4360">完成後找到 1～3 個可探索方向</span>
           </div>
           <div style="border-bottom:1px solid #E5D9E9; padding:26px 0 26px 24px; display:flex; align-items:baseline; gap:14px">
-            <span data-count="40" data-suffix="+" style="font-size:56px; line-height:1; font-weight:700; color:#C4683F; letter-spacing:-0.02em">0+</span>
+            <span data-count="40" data-suffix="+" class="ms56" style="font-size:56px; line-height:1; font-weight:700; color:#C4683F; letter-spacing:-0.02em">0+</span>
             <span style="font-size:15.5px; line-height:1.7; color:#4A4360">歲，主要服務職涯中段工作者</span>
           </div>
         </div>
@@ -311,39 +324,39 @@
   <section id="method" style="background:#8B5FA8">
     <div style="background:#8B5FA8; padding:80px 24px 84px">
       <div style="text-align:center; max-width:820px; margin:0 auto">
-        <h2 style="display:inline-block; background:#fff; color:#8B5FA8; font-size:24px; font-weight:700; margin:0; padding:14px 40px; border-radius:999px; box-shadow:0 10px 26px rgba(53,48,74,0.16)">第二職涯，不是從零開始</h2>
+        <h2 class="ms24" style="display:inline-block; background:#fff; color:#8B5FA8; font-size:24px; font-weight:700; margin:0; padding:14px 40px; border-radius:999px; box-shadow:0 10px 26px rgba(53,48,74,0.16)">第二職涯，不是從零開始</h2>
         <p style="font-size:17px; line-height:1.9; color:#F3E6F6; margin:26px 0 0">3 個階段，陪你從「不知道去哪裡」到真正開始行動</p>
       </div>
     </div>
     <div style="background:#F8DCC7; border-radius:64px 64px 0 0; padding-bottom:1px">
-      <div data-stacktrack="1" style="position:relative; max-width:1160px; margin:0 auto; padding:80px 24px 88px">
-        <div data-stackpin="1" style="position:relative">
-          <div data-stackwrap="1" style="display:grid; gap:34px">
-        <article data-flip="1" data-stack="1" data-unfold="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-right:auto; width:96%">
+      <div style="position:relative; width:90%; max-width:1160px; margin:0 auto; padding:80px 0 88px">
+        <div style="position:relative">
+          <div style="display:grid; gap:34px">
+        <article data-fade="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px, 100%), 1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-right:auto; width:96%">
           <img src="assets/step-01-direction.webp" width="900" height="819" alt="插畫：女性看著岔路方向指示牌，代表找到第二職涯方向" style="border-radius:0 26px 26px 0; width:100%; height:100%; min-height:260px; max-height:340px; display:block; object-fit:cover; background:#F3E9F6" />
           <div style="padding:44px 42px">
             <span style="display:none">01</span>
-            <h3 style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">找到<span style="color:#8B5FA8">第二職涯</span>方向</h3>
+            <h3 class="ms30" style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">找到<span style="color:#8B5FA8">第二職涯</span>方向</h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">重新盤點你的工作經驗、優勢、價值觀與可轉移能力。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">先釐清你真正想離開的是什麼，以及下一份工作真正想要什麼。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">讓「我不知道自己還能做什麼」，開始變成幾個清楚、可以驗證的方向。</p>
           </div>
         </article>
-        <article data-flip="1" data-stack="1" data-unfold="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-left:auto; width:96%">
+        <article data-fade="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px, 100%), 1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-left:auto; width:96%">
           <div style="padding:44px 42px; order:0">
             <span style="display:none">02</span>
-            <h3 style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">把十幾年的經驗<span style="color:#8B5FA8">重新定位</span></h3>
+            <h3 class="ms30" style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">把十幾年的經驗<span style="color:#8B5FA8">重新定位</span></h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">你的價值，不只是現在的職稱。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">重新整理過去做過的事、解決過的問題與累積的能力，把它們轉換成下一個職涯也能使用的市場價值。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">不用否定過去，才能開始下一段。</p>
           </div>
           <img src="assets/step-02-reposition.webp" width="900" height="900" alt="插畫：女性從箱子中取出代表能力與經驗的卡片，重新盤點職涯價值" style="border-radius:26px 0 0 26px; width:100%; height:100%; min-height:260px; max-height:340px; display:block; object-fit:cover; background:#F3E9F6" />
         </article>
-        <article data-flip="1" data-stack="1" data-unfold="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-right:auto; width:96%">
+        <article data-fade="1" style="position:relative; background:#fff; border-radius:26px; overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px, 100%), 1fr)); box-shadow:0 18px 44px rgba(53,48,74,0.18); margin-right:auto; width:96%">
           <img src="assets/step-03-action.webp" width="900" height="900" alt="插畫：女性在筆電前研究職缺、修改履歷並準備面試" style="border-radius:0 26px 26px 0; width:100%; height:100%; min-height:260px; max-height:340px; display:block; object-fit:cover; background:#F3E9F6" />
           <div style="padding:44px 42px">
             <span style="display:none">03</span>
-            <h3 style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">把方向變成<span style="color:#8B5FA8">真正的轉職行動</span></h3>
+            <h3 class="ms30" style="font-size:30px; font-weight:700; color:#35304A; margin:0 0 20px">把方向變成<span style="color:#8B5FA8">真正的轉職行動</span></h3>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">從職缺研究、履歷定位到面試準備，</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0 0 12px">一步步確認這條路是否適合你，也讓企業看懂：</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">為什麼你的過去，正是下一份工作的優勢。</p>
@@ -363,10 +376,10 @@
       <svg viewBox="0 0 24 24" aria-hidden="true" style="position:absolute; top:90%; left:70%; width:22px; height:22px; opacity:0.6; animation:twinkle 3s ease-in-out 0.3s infinite; pointer-events:none"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z" fill="#F6E6FA" /></svg>
       <svg viewBox="0 0 24 24" aria-hidden="true" style="position:absolute; top:14%; left:92%; width:16px; height:16px; opacity:0.7; animation:twinkle 2.8s ease-in-out 0.9s infinite; pointer-events:none"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z" fill="#F6E6FA" /></svg>
       <svg viewBox="0 0 24 24" aria-hidden="true" style="position:absolute; top:58%; left:88%; width:28px; height:28px; opacity:0.55; animation:twinkle 4.2s ease-in-out 0.2s infinite; pointer-events:none"><path d="M12 0c.6 6.2 5.2 10.8 12 12-6.8 1.2-11.4 5.8-12 12-.6-6.2-5.2-10.8-12-12C6.8 10.8 11.4 6.2 12 0z" fill="#F6E6FA" /></svg>
-    <div data-zoom="1" style="position:relative; max-width:1160px; margin:0 auto; padding:96px 24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:56px; align-items:center">
+    <div data-zoom="1" style="position:relative; width:90%; max-width:1160px; margin:0 auto; padding:96px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px, 100%), 1fr)); gap:56px; align-items:center">
       <div>
         <span style="display:inline-block; padding:7px 16px; border-radius:999px; background:rgba(255,255,255,0.18); color:#E9D8EE; font-size:13.5px; letter-spacing:0.04em; margin-bottom:22px; white-space:nowrap">免費直播課程</span>
-        <h2 style="font-size:38px; line-height:1.55; font-weight:700; letter-spacing:-0.02em; color:#ffffff; margin:0 0 28px">《40+ 第二職涯定位課》3 步找出你的下一個職涯方向</h2>
+        <h2 class="ms38" style="font-size:38px; line-height:1.55; font-weight:700; letter-spacing:-0.02em; color:#ffffff; margin:0 0 28px">《40+ 第二職涯定位課》3 步找出你的下一個職涯方向</h2>
         <p style="font-size:16px; line-height:2; letter-spacing:-0.02em; color:#EDE5F2; margin:0 0 18px">你會開始弄清楚：</p>
         <ul style="list-style:none; margin:0 0 28px; padding:0; display:flex; flex-direction:column; gap:14px">
           <li style="display:flex; gap:14px; align-items:flex-start">
@@ -395,14 +408,14 @@
 
   <div style="background:#8B5FA8">
   <section id="testimonials" style="background:#FBF7F3; border-radius:64px 64px 0 0; overflow-x:hidden">
-    <div style="max-width:1160px; margin:0 auto; padding:96px 24px">
+    <div style="width:90%; max-width:1160px; margin:0 auto; padding:96px 0">
       <div style="text-align:center; margin-bottom:56px">
-        <h2 style="font-size:42px; font-weight:700; color:#8B5FA8; margin:0 0 14px">學員見證</h2>
+        <h2 class="ms42" style="font-size:42px; font-weight:700; color:#8B5FA8; margin:0 0 14px">學員見證</h2>
         <p style="font-size:16.5px; color:#6B6480; margin:0">他們也曾經不知道，下一步可以去哪裡</p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px, 100%), 1fr)); gap:28px">
         <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
-          <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「原來我不是只能繼續做現在的工作。」</h3>
+          <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「原來我不是只能繼續做現在的工作。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">我在科技業做了 13 年，已經做到主管。一直想離開，卻覺得換跑道就代表以前全部白費。</p>
             <p style="font-size:15px; line-height:2; color:#35304A; font-weight:700; margin:0">現在不是突然變得不害怕，而是我終於知道自己可以往哪裡走。</p>
@@ -410,7 +423,7 @@
           <figcaption style="margin-top:auto; padding-top:14px; border-top:1px solid #F4E9F3; font-size:14px; color:#8B5FA8; font-weight:500">Angela，42 歲｜科技業專案主管</figcaption>
         </figure>
         <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
-          <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「我本來以為，我需要的是勇氣。」</h3>
+          <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「我本來以為，我需要的是勇氣。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">這兩年我一直告訴自己要勇敢辭職，但每次真的要走又退縮。</p>
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">後來才發現，我不是不敢，而是根本沒有想清楚下一步。</p>
@@ -419,7 +432,7 @@
           <figcaption style="margin-top:auto; padding-top:14px; border-top:1px solid #F4E9F3; font-size:14px; color:#8B5FA8; font-weight:500">Jason，45 歲｜金融業中階主管</figcaption>
         </figure>
         <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
-          <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「第一次覺得，十幾年的經驗不是包袱。」</h3>
+          <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「第一次覺得，十幾年的經驗不是包袱。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:2; color:#6B6480; margin:0">我最害怕的是已經 40 歲，轉職是不是太晚。</p>
             <p style="font-size:15px; line-height:2; color:#35304A; font-weight:700; margin:0">我沒有從零開始，我只是換了一個地方使用原本就有的能力。</p>
@@ -432,13 +445,13 @@
   </div>
 
   <section id="notes" style="background:#FBF7F3">
-    <div style="max-width:1160px; margin:0 auto; padding:96px 24px">
-      <h2 style="font-size:42px; font-weight:700; text-align:center; color:#8B5FA8; margin:0 0 56px">第二職涯筆記</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px">
+    <div style="width:90%; max-width:1160px; margin:0 auto; padding:96px 0">
+      <h2 class="ms42" style="font-size:42px; font-weight:700; text-align:center; color:#8B5FA8; margin:0 0 56px">第二職涯筆記</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px, 100%), 1fr)); gap:28px">
         <article style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column">
           <img src="assets/pain-01-alone.webp" width="760" height="760" alt="文章配圖：中年女性坐著望向城市，思考十幾年的職涯累積" style="width:100%; height:210px; display:block; object-fit:cover; object-position:center 35%; background:#F7F0F9" />
           <div style="padding:30px 30px 34px; display:flex; flex-direction:column; gap:14px; flex:1">
-            <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">40 歲想轉職，最怕的不是年紀，而是「以前的累積全部浪費」</h3>
+            <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">40 歲想轉職，最怕的不是年紀，而是「以前的累積全部浪費」</h3>
             <p style="font-size:14.5px; line-height:1.95; color:#6B6480; margin:0">做了十幾年才發現不想繼續，真的只能從零開始嗎？</p>
             <a href="article-40-career-change.html" style="margin-top:auto; font-size:14.5px; font-weight:500; color:#8B5FA8">閱讀文章 →</a>
           </div>
@@ -446,7 +459,7 @@
         <article style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column">
           <img src="assets/pain-02-doubt.webp" width="760" height="760" alt="文章配圖：女性在筆電前思考，分辨自己真正想離開的是什麼" style="width:100%; height:210px; display:block; object-fit:cover; object-position:center 35%; background:#F7F0F9" />
           <div style="padding:30px 30px 34px; display:flex; flex-direction:column; gap:14px; flex:1">
-            <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">工作沒有不好，為什麼我就是越來越不想做了？想辭職前，先做這個練習</h3>
+            <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">工作沒有不好，為什麼我就是越來越不想做了？想辭職前，先做這個練習</h3>
             <p style="font-size:14.5px; line-height:1.95; color:#6B6480; margin:0">在辭職以前，先分清楚你真正想離開的是什麼。</p>
             <a href="article-why-quit.html" style="margin-top:auto; font-size:14.5px; font-weight:500; color:#8B5FA8">閱讀文章 →</a>
           </div>
@@ -454,7 +467,7 @@
         <article style="background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column">
           <img src="assets/article-job-search.webp" width="900" height="900" alt="文章配圖：女性瀏覽求職網站上的職缺卡片，思考自己適合什麼工作" style="width:100%; height:210px; display:block; object-fit:cover; object-position:center 35%; background:#F7F0F9" />
           <div style="padding:30px 30px 34px; display:flex; flex-direction:column; gap:14px; flex:1">
-            <h3 style="font-size:19px; line-height:1.7; font-weight:600; margin:0">不知道自己適合什麼工作？先別急著打開 104</h3>
+            <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">不知道自己適合什麼工作？先別急著打開 104</h3>
             <p style="font-size:14.5px; line-height:1.95; color:#6B6480; margin:0">如果連自己在找什麼都不知道，看再多職缺只會更迷惘。</p>
             <a href="article-before-104.html" style="margin-top:auto; font-size:14.5px; font-weight:500; color:#8B5FA8">閱讀文章 →</a>
           </div>
@@ -476,7 +489,7 @@
         </div>
       </div>
       <div data-fade="1" style="flex:2 1 320px; min-width:0; text-align:left">
-        <h2 style="font-size:36px; line-height:1.55; font-weight:700; letter-spacing:-0.02em; color:#ffffff; margin:0 0 20px">40 歲後的轉職，不是把過去推翻重來。</h2>
+        <h2 class="ms36" style="font-size:36px; line-height:1.55; font-weight:700; letter-spacing:-0.02em; color:#ffffff; margin:0 0 20px">40 歲後的轉職，不是把過去推翻重來。</h2>
         <p style="font-size:17px; line-height:2; letter-spacing:-0.02em; color:#F0E6F4; margin:0 0 6px">而是重新看懂你已經累積的一切，</p>
         <p style="font-size:17px; line-height:2; letter-spacing:-0.02em; color:#F0E6F4; margin:0 0 36px">再決定接下來十年，想把它帶去哪裡。</p>
         <a href="live.html" data-btn="1" style="display:inline-block; padding:18px 42px; border-radius:999px; background:#E8926A; color:#fff; font-size:17px; font-weight:500; box-shadow:0 12px 28px rgba(232,146,106,0.30)" class="h7">報名免費直播課程</a>
@@ -485,13 +498,11 @@
   </section>
 
   <footer style="background:#463850">
-    <div style="max-width:1160px; margin:0 auto; padding:72px 24px 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:48px">
+    <div style="max-width:1160px; margin:0 auto; padding:72px 24px 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px, 100%), 1fr)); gap:48px">
       <div>
         <p style="font-size:18px; font-weight:700; color:#fff; margin:0 0 6px">第二職涯研究室 Second Career Lab</p>
         <p style="font-size:11px; letter-spacing:0.18em; color:#D0A9DA; margin:0 0 22px">CAREER COACHING FOR 40+</p>
-        <p style="font-size:15px; color:#F1E9F3; margin:0 0 8px">林米雅 Mia Lin</p>
-        <p style="font-size:14px; color:#C6B2C6; margin:0 0 4px">前科技業 HRBP｜ICF ACC 教練</p>
-        <p style="font-size:14px; color:#C6B2C6; margin:0">12 年企業人才發展經驗</p>
+
         <div style="display:flex; gap:14px; margin-top:22px">
           <a href="https://www.instagram.com/" aria-label="Instagram" style="width:40px; height:40px; border-radius:50%; border:1px solid #6A5270; display:flex; align-items:center; justify-content:center; color:#F1E9F3" class="h8">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" /></svg>
