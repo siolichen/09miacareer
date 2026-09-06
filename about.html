@@ -22,6 +22,8 @@
 <style>
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #FBF7F3; color: #35304A; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; -webkit-font-smoothing: antialiased; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  img, svg { max-width: 100%; }
   * { box-sizing: border-box; }
   a { color: #8B5FA8; text-decoration: none; }
   a:hover { color: #E8926A; }
@@ -102,7 +104,7 @@
       <div style="flex:1 1 300px; max-width:400px; display:flex; justify-content:center">
         <div style="position:relative; width:100%; aspect-ratio:1/1; border-radius:50%; padding:26px; background:linear-gradient(140deg,rgba(203,165,218,0.15) 0%,rgba(203,165,218,0.55) 45%,#B98BCE 100%)">
           <div style="position:absolute; inset:2.5px; border-radius:50%; background:#F7F0F9"></div>
-          <svg viewBox="0 0 100 100" aria-hidden="true" style="position:absolute; inset:-20px; width:calc(100% + 40px); height:calc(100% + 40px); animation:spinRing 18s linear infinite; overflow:visible">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="position:absolute; inset:-14px; width:auto; height:auto; animation:spinRing 18s linear infinite; overflow:visible; pointer-events:none">
             <circle cx="50" cy="50" r="48" fill="none" stroke="#B98BCE" stroke-width="0.7" stroke-linecap="round" stroke-dasharray="42 14 22 10 60 16" opacity="0.85" />
           </svg>
           <div style="position:absolute; inset:26px; border-radius:50%; padding:10px; background:#fff; box-shadow:0 18px 44px rgba(139,95,168,0.16)">
