@@ -38,5 +38,6 @@ blog.html                      第二職涯筆記（文章總覽）
 article-40-career-change.html  文章一
 article-why-quit.html          文章二
 article-before-104.html        文章三
-live.html                      直播報名（含個資告知）
+live.html                      直播報名
+privacy.html                   個資與隱私權告知
 robots.txt / sitemap.xml       上線前請把網域換成實際網址

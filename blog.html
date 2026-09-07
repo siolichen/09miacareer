@@ -35,6 +35,16 @@
     [data-navlinks] { display: none !important; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start !important; gap: 20px !important; background: #FCEBDE; padding: 24px; border-bottom: 1px solid #F2D9C6; box-shadow: 0 16px 34px rgba(53,48,74,0.14); }
     [data-navlinks][data-open="true"] { display: flex !important; }
   }
+  /* mobile-text */
+  @media (max-width: 900px) {
+    h1 br, h2 br, h3 br, p br { display: none; }
+    h1, h2, h3, p, li, span, blockquote { line-break: strict; word-break: normal; overflow-wrap: break-word; text-wrap: pretty; }
+    article > div, figure, blockquote[style*="padding"], [data-boxpad] { padding-left: 5% !important; padding-right: 5% !important; }
+    section > div, main > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+    footer > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+    footer > div:first-of-type { display: flex !important; flex-direction: column !important; }
+    [data-footer-news] { order: -1; }
+  }
   /* mobile-type */
   @media (max-width: 900px) {
     .ms20 { font-size: 16px !important; }
@@ -201,17 +211,17 @@
           <a href="about.html" style="font-size:14.5px; color:#F1E9F3" class="h12">關於米雅</a>
           <a href="blog.html" style="font-size:14.5px; color:#F1E9F3" class="h13">第二職涯筆記</a>
           <a href="live.html" style="font-size:14.5px; color:#F1E9F3" class="h14">報名免費直播課程</a>
-          <a href="live.html#privacy" style="font-size:14.5px; color:#F1E9F3" class="h15">個資與隱私權告知</a>
+          <a href="privacy.html" style="font-size:14.5px; color:#F1E9F3" class="h15">個資與隱私權告知</a>
         </div>
       </div>
-      <div>
+      <div data-footer-news="1">
         <p style="font-size:19px; font-weight:600; color:#fff; margin:0 0 12px">訂閱第二職涯電子報</p>
         <p style="font-size:14px; line-height:1.9; color:#C6B2C6; margin:0 0 22px">提供米雅用心撰寫的中年第二職涯好文，每週寄到您的信箱中</p>
         <form data-subscribe="1" style="display:flex; gap:10px; flex-wrap:wrap">
           <input type="email" required="required" placeholder="your@email.com" aria-label="電子郵件" style="flex:1 1 180px; min-width:0; padding:13px 18px; border-radius:999px; border:1px solid #6A5270; background:#53415E; color:#fff; font-size:14.5px; font-family:inherit; outline:none" />
           <button type="submit" data-btn="1" style="padding:13px 26px; border-radius:999px; border:none; background:#E8926A; color:#fff; font-size:14.5px; font-weight:500; font-family:inherit; cursor:pointer" class="h16">訂閱</button>
         </form>
-        <p style="font-size:12.5px; line-height:1.8; color:#9C87A0; margin:12px 0 0">訂閱即表示同意本站依<a href="live.html#privacy" style="color:#D0A9DA; text-decoration:underline">個人資料蒐集告知事項</a>使用您的電子郵件，可隨時取消訂閱。</p>
+        <p style="font-size:12.5px; line-height:1.8; color:#9C87A0; margin:12px 0 0">訂閱即表示同意本站依<a href="privacy.html" style="color:#D0A9DA; text-decoration:underline">個人資料蒐集告知事項</a>使用您的電子郵件，可隨時取消訂閱。</p>
         <p style="font-size:13px; color:#D0A9DA; margin:8px 0 0; min-height:18px" data-submsg="1"></p>
       </div>
     </div>

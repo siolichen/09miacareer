@@ -39,8 +39,19 @@
   }
   @media (max-width: 900px) {
     [data-benefits], #about > div, #program > div, #testimonials > div > div, #notes > div > div, #method article { grid-template-columns: 1fr !important; }
+    #method article { margin: 0 auto !important; width: 100% !important; }
     #method article > div { padding: 32px 26px !important; }
     #method article img { border-radius: 26px 26px 0 0 !important; height: 220px !important; }
+  }
+  /* mobile-text */
+  @media (max-width: 900px) {
+    h1 br, h2 br, h3 br, p br { display: none; }
+    h1, h2, h3, p, li, span, blockquote { line-break: strict; word-break: normal; overflow-wrap: break-word; text-wrap: pretty; }
+    article > div, figure, blockquote[style*="padding"], [data-boxpad] { padding-left: 5% !important; padding-right: 5% !important; }
+    section > div, main > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+    footer > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+    footer > div:first-of-type { display: flex !important; flex-direction: column !important; }
+    [data-footer-news] { order: -1; }
   }
   /* mobile-type */
   @media (max-width: 900px) {
@@ -519,10 +530,10 @@
           <a href="about.html" style="font-size:14.5px; color:#F1E9F3" class="h11">關於米雅</a>
           <a href="blog.html" style="font-size:14.5px; color:#F1E9F3" class="h12">第二職涯筆記</a>
           <a href="live.html" style="font-size:14.5px; color:#F1E9F3" class="h13">報名免費直播課程</a>
-          <a href="live.html#privacy" style="font-size:14.5px; color:#F1E9F3" class="h14">個資與隱私權告知</a>
+          <a href="privacy.html" style="font-size:14.5px; color:#F1E9F3" class="h14">個資與隱私權告知</a>
         </div>
       </div>
-      <div>
+      <div data-footer-news="1">
         <p style="font-size:19px; font-weight:600; color:#fff; margin:0 0 12px">訂閱第二職涯電子報</p>
         <p style="font-size:14px; line-height:1.9; color:#C6B2C6; margin:0 0 22px">提供米雅用心撰寫的中年第二職涯好文，每週寄到您的信箱中</p>
         <form data-subscribe="1" style="display:flex; gap:10px; flex-wrap:wrap">
