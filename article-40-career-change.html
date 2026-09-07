@@ -38,7 +38,7 @@
   /* mobile-text */
   @media (max-width: 900px) {
     h1 br, h2 br, h3 br, p br { display: none; }
-    section > div, footer > div, main > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+    section > div[style*="max-width"], section > div > div[style*="max-width"], footer > div, main > div[style*="max-width"] { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
     article > div, figure, form, [data-box] { padding-left: 5% !important; padding-right: 5% !important; }
     h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; word-break: normal; overflow-wrap: break-word; line-break: strict; text-wrap: normal; }
     blockquote { padding-left: 5% !important; padding-right: 5% !important; }
