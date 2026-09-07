@@ -29,7 +29,7 @@
   * { box-sizing: border-box; }
   a { color: #8B5FA8; text-decoration: none; }
   a:hover { color: #E8926A; }
-  p { text-wrap: pretty; }
+  p { }
   @keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   [data-hamburger] { display: none; }
   @media (max-width: 900px) {
@@ -39,10 +39,9 @@
   }
   /* mobile-text */
   @media (max-width: 900px) {
-    h1 br, h2 br, h3 br, p br { display: none; }
     section, footer, article, figure { overflow-x: hidden !important; }
     svg, img { max-width: 100% !important; }
-    h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; word-break: normal; overflow-wrap: break-word; line-break: strict; text-wrap: normal; }
+    h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; }
     footer > div:first-of-type { display: flex !important; flex-direction: column !important; }
     [data-footer-news] { order: -1; }
   }
@@ -132,7 +131,7 @@
       </div>
       <div style="flex:2 1 380px; min-width:0">
         <span style="display:inline-block; padding:7px 18px; border-radius:999px; background:#FDEDE3; color:#C4683F; font-size:13px; letter-spacing:0.04em; margin-bottom:22px; white-space:nowrap">關於米雅</span>
-        <h1 class="ms40" style="font-size:40px; line-height:1.5; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 22px">我不是一開始就知道，<br />自己適合做什麼。</h1>
+        <h1 class="ms40" style="font-size:40px; line-height:1.5; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 22px">我不是一開始就知道，自己適合做什麼。</h1>
         <p style="font-size:16.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0 0 10px">嗨，我是 <strong style="font-weight:700; color:#8B5FA8">林米雅 Mia Lin</strong>。</p>
         <p style="font-size:16.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0">現在的我是 ICF ACC 教練，也有超過12年的人才發展與 HR 經驗。</p>
       </div>
@@ -183,7 +182,7 @@
     <div style="width:90%; max-width:1160px; margin:0 auto; padding:72px 5% 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px, 100%), 1fr)); gap:48px">
       <div>
         <p style="font-size:18px; font-weight:700; color:#fff; margin:0 0 6px">第二職涯研究室 Second Career Lab</p>
-        <p style="font-size:11px; letter-spacing:0.18em; color:#D0A9DA; margin:0 0 22px">CAREER COACHING FOR <span style="white-space:nowrap">40+</span></p>
+        <p style="font-size:11px; letter-spacing:0.18em; color:#D0A9DA; margin:0 0 22px">CAREER COACHING FOR 40+</p>
 
         <div style="display:flex; gap:14px; margin-top:22px">
           <a href="https://www.instagram.com/" aria-label="Instagram" style="width:40px; height:40px; border-radius:50%; border:1px solid #6A5270; display:flex; align-items:center; justify-content:center; color:#F1E9F3" class="h3">
