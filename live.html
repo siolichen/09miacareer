@@ -40,7 +40,7 @@
     h1 br, h2 br, h3 br, p br { display: none; }
     section > div, footer > div, main > div { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
     article > div, figure, form, [data-box] { padding-left: 5% !important; padding-right: 5% !important; }
-    h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; word-break: keep-all; overflow-wrap: anywhere; text-wrap: normal; }
+    h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; word-break: normal; overflow-wrap: break-word; line-break: strict; text-wrap: normal; }
     blockquote { padding-left: 5% !important; padding-right: 5% !important; }
     footer > div:first-of-type { display: flex !important; flex-direction: column !important; }
     [data-footer-news] { order: -1; }
@@ -129,17 +129,17 @@
       <div style="flex:1.2 1 360px; min-width:0">
         <span style="display:inline-block; padding:7px 18px; border-radius:999px; background:#FDEDE3; color:#C4683F; font-size:13px; letter-spacing:0.04em; margin-bottom:22px; white-space:nowrap">免費線上直播</span>
         <h1 class="ms40" style="font-size:40px; line-height:1.5; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 20px">《40+ 第二職涯定位課》<br />3 步找出你的下一個職涯方向</h1>
-        <p style="font-size:17px; line-height:2; letter-spacing:-0.03em; color:#4A4360; margin:0 0 32px">不用辭職，先把下一步看清楚。</p>
-        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:34px">
-          <span style="display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:999px; background:#fff; border:1px solid #EADFF0; font-size:14.5px; color:#4A4360">
+        <p style="font-size:17px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0 0 32px">不用辭職，先把下一步看清楚。</p>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:34px">
+          <span style="display:flex; align-items:center; gap:11px; font-size:15.5px; color:#4A4360">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8926A" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>
             10/17（五）20:00–21:30
           </span>
-          <span style="display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:999px; background:#fff; border:1px solid #EADFF0; font-size:14.5px; color:#4A4360">
+          <span style="display:flex; align-items:center; gap:11px; font-size:15.5px; color:#4A4360">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8926A" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="15" height="16" rx="3" /><path d="M17 10l5-3v10l-5-3z" /></svg>
             線上直播（Zoom）
           </span>
-          <span style="display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:999px; background:#fff; border:1px solid #EADFF0; font-size:14.5px; color:#4A4360">
+          <span style="display:flex; align-items:center; gap:11px; font-size:15.5px; color:#4A4360">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8926A" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
             免費，限 60 席
           </span>
@@ -155,27 +155,27 @@
   <section style="background:#FBF7F3">
     <div style="width:90%; max-width:900px; margin:0 auto; padding:88px 0 40px">
       <h2 class="ms32" style="font-size:32px; line-height:1.6; font-weight:700; letter-spacing:-0.03em; color:#8B5FA8; margin:0 0 12px">這場直播，你會開始弄清楚</h2>
-      <p style="font-size:16.5px; line-height:2; letter-spacing:-0.03em; color:#6B6480; margin:0 0 40px">90 分鐘，帶你把「我就是不想做了」拆成可以行動的三個問題。</p>
+      <p style="font-size:16.5px; line-height:1.8; letter-spacing:-0.03em; color:#6B6480; margin:0 0 40px">90 分鐘，帶你把「我就是不想做了」拆成可以行動的三個問題。</p>
       <div style="display:flex; flex-direction:column; gap:26px">
         <div style="display:flex; gap:20px; align-items:flex-start">
           <span style="flex:none; width:38px; height:38px; border-radius:50%; border:1.5px solid #C09AD4; color:#8B5FA8; font-size:15px; font-weight:700; display:flex; align-items:center; justify-content:center">1</span>
           <div>
             <h3 class="ms20" style="font-size:20px; line-height:1.7; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 8px">你的問題，究竟是現在的工作，還是整條職涯？</h3>
-            <p style="font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#6B6480; margin:0">分辨環境、角色、工作方式與職涯方向，避免用錯方法解決問題。</p>
+            <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#6B6480; margin:0">分辨環境、角色、工作方式與職涯方向，避免用錯方法解決問題。</p>
           </div>
         </div>
         <div style="display:flex; gap:20px; align-items:flex-start">
           <span style="flex:none; width:38px; height:38px; border-radius:50%; border:1.5px solid #C09AD4; color:#8B5FA8; font-size:15px; font-weight:700; display:flex; align-items:center; justify-content:center">2</span>
           <div>
             <h3 class="ms20" style="font-size:20px; line-height:1.7; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 8px">過去十幾年，有哪些能力其實可以帶走？</h3>
-            <p style="font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#6B6480; margin:0">用可轉移能力的盤點方法，把職稱底下真正的價值整理出來。</p>
+            <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#6B6480; margin:0">用可轉移能力的盤點方法，把職稱底下真正的價值整理出來。</p>
           </div>
         </div>
         <div style="display:flex; gap:20px; align-items:flex-start">
           <span style="flex:none; width:38px; height:38px; border-radius:50%; border:1.5px solid #C09AD4; color:#8B5FA8; font-size:15px; font-weight:700; display:flex; align-items:center; justify-content:center">3</span>
           <div>
             <h3 class="ms20" style="font-size:20px; line-height:1.7; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 8px">下一個職涯方向，應該從哪裡開始找？</h3>
-            <p style="font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#6B6480; margin:0">建立自己的選擇標準，再用職缺驗證方向，而不是被職缺定義自己。</p>
+            <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#6B6480; margin:0">建立自己的選擇標準，再用職缺驗證方向，而不是被職缺定義自己。</p>
           </div>
         </div>
       </div>
@@ -184,10 +184,10 @@
       <div style="border-top:1px solid #EDE2E8; padding-top:40px">
         <h2 class="ms24" style="font-size:24px; line-height:1.7; font-weight:700; letter-spacing:-0.03em; color:#8B5FA8; margin:0 0 20px">這場直播適合你，如果——</h2>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>你 38～50 歲，已經走到職涯中段</span></p>
-          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>想轉職，但不知道自己還能做什麼</span></p>
-          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>擔心換跑道等於過去全部白費</span></p>
-          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>有家庭與現實條件，不能裸辭</span></p>
+          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>你 38～50 歲，已經走到職涯中段</span></p>
+          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>想轉職，但不知道自己還能做什麼</span></p>
+          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>擔心換跑道等於過去全部白費</span></p>
+          <p style="display:flex; gap:11px; align-items:flex-start; font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none; margin-top:4px"><path d="M4 12.5l5.5 5.5L20 7" /></svg><span>有家庭與現實條件，不能裸辭</span></p>
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8B5FA8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7" /></svg>
             </div>
             <h3 class="ms22" style="font-size:22px; line-height:1.7; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 12px">報名成功，我們直播見。</h3>
-            <p style="font-size:15.5px; line-height:1.95; letter-spacing:-0.03em; color:#6B6480; margin:0">直播連結與課前練習會寄到你填寫的信箱，記得先加入行事曆。</p>
+            <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#6B6480; margin:0">直播連結與課前練習會寄到你填寫的信箱，記得先加入行事曆。</p>
           </div>
         </div>
         <div>
@@ -251,7 +251,7 @@
           <p style="font-size:13px; letter-spacing:0.14em; color:#C09AD4; margin:0 0 10px">主講人</p>
           <h2 class="ms26" style="font-size:26px; line-height:1.6; font-weight:700; letter-spacing:-0.03em; color:#35304A; margin:0 0 10px">林米雅 Mia Lin</h2>
           <p style="font-size:15px; line-height:1.9; letter-spacing:-0.03em; color:#8B5FA8; margin:0 0 18px">前科技業 HRBP｜ICF ACC 教練｜12 年企業人才發展經驗</p>
-          <p style="font-size:15.5px; line-height:2; letter-spacing:-0.03em; color:#4A4360; margin:0 0 20px">從老闆特助轉進人資領域，38 歲那年做了第一次職涯轉換，現在陪伴 40+ 工作者重新盤點自己的職涯籌碼。</p>
+          <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.03em; color:#4A4360; margin:0 0 20px">從老闆特助轉進人資領域，38 歲那年做了第一次職涯轉換，現在陪伴 40+ 工作者重新盤點自己的職涯籌碼。</p>
           <a href="about.html" style="font-size:15px; font-weight:500; color:#8B5FA8">關於米雅 →</a>
         </div>
       </div>
@@ -262,7 +262,7 @@
     <div style="max-width:1160px; margin:0 auto; padding:72px 24px 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px, 100%), 1fr)); gap:48px">
       <div>
         <p style="font-size:18px; font-weight:700; color:#fff; margin:0 0 6px">第二職涯研究室 Second Career Lab</p>
-        <p style="font-size:11px; letter-spacing:0.18em; color:#D0A9DA; margin:0 0 22px">CAREER COACHING FOR 40+</p>
+        <p style="font-size:11px; letter-spacing:0.18em; color:#D0A9DA; margin:0 0 22px">CAREER COACHING FOR <span style="white-space:nowrap">40+</span></p>
 
         <div style="display:flex; gap:14px; margin-top:22px">
           <a href="https://www.instagram.com/" aria-label="Instagram" style="width:40px; height:40px; border-radius:50%; border:1px solid #6A5270; display:flex; align-items:center; justify-content:center; color:#F1E9F3" class="h8">
