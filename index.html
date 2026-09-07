@@ -43,13 +43,15 @@
     #method article { margin: 0 auto !important; width: 100% !important; }
     #method article > div { padding: 32px 26px !important; }
     #method article img { border-radius: 26px 26px 0 0 !important; height: 220px !important; }
-    #program > div { padding-top: 0 !important; padding-bottom: 48px !important; }
+    #program > div { padding-top: 34px !important; padding-bottom: 48px !important; }
     #program { border-radius: 36px 36px 0 0 !important; margin-top: -40px !important; }
     #method > div { padding-bottom: 40px !important; }
   }
   /* mobile-text */
   @media (max-width: 900px) {
     h1 br, h2 br, h3 br, p br { display: none; }
+    section, footer, article, figure { overflow-x: hidden !important; }
+    svg, img { max-width: 100% !important; }
     section > div[style*="max-width"], footer > div, main > div[style*="max-width"] { width: 90% !important; max-width: 90% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
     article > div, figure, form, [data-box] { padding-left: 5% !important; padding-right: 5% !important; }
     h1, h2, h3, h4, p, li, blockquote, figcaption { max-width: 100% !important; letter-spacing: 0 !important; word-break: normal; overflow-wrap: break-word; line-break: strict; text-wrap: normal; }
@@ -190,7 +192,7 @@
       <img src="assets/hero-career-change.webp" width="1536" height="1024" alt="40 歲女性上班族坐在筆電前望向窗外，思考中年轉職與第二職涯方向" style="position:absolute; top:0; left:0; right:0; width:100%; height:calc(100% - 80px); object-fit:cover; object-position:78% 28%" />
       
       <div style="position:relative; width:90%; max-width:1160px; margin:0 auto; padding:36px 0 0">
-        <div style="max-width:500px; margin:0 auto 0 0; background:rgba(255,255,255,0.82); backdrop-filter:blur(6px); border-radius:26px; padding:44px 48px 40px; text-align:left; box-shadow:0 30px 70px rgba(53,48,74,0.18)">
+        <div data-box="1" style="max-width:500px; margin:0 auto 0 0; background:rgba(255,255,255,0.82); backdrop-filter:blur(6px); border-radius:26px; padding:44px 48px 40px; text-align:left; box-shadow:0 30px 70px rgba(53,48,74,0.18)">
           <span style="display:inline-block; padding:7px 18px; border-radius:999px; background:#FDEDE3; color:#C4683F; font-size:13px; letter-spacing:0.04em; margin-bottom:20px; white-space:nowrap">給 38～50 歲職涯中段的你</span>
           <h1 class="ms40" style="font-size:40px; line-height:1.42; font-weight:700; margin:0 0 16px; letter-spacing:0.01em">工作做了十幾年，<br /><span style="color:#8B5FA8">想轉職</span>卻<span style="color:#E8926A">不知道自己還能去哪裡</span>？</h1>
           <h2 class="ms19" style="font-size:19px; line-height:1.85; font-weight:500; color:#4A4360; margin:0 0 14px; max-width:620px">你不是沒有能力，只是還沒看懂，過去累積的經驗可以帶你走向哪裡。</h2>
@@ -310,7 +312,7 @@
         <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.045em; color:#4A4360; margin:0 0 16px">我沒有把過去全部丟掉，而是重新盤點自己已經累積的能力，找到可以轉移的方向，後來一步步轉進人資領域，成為科技業 HRBP，投入人才發展工作超過 12 年。</p>
         <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.045em; color:#4A4360; margin:0 0 16px">而現在，我再次把這些經驗帶往下一站，成為 ICF ACC 教練，成立 <strong style="font-weight:700; color:#35304A">第二職涯研究室 Second Career Lab</strong>。</p>
         <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.045em; color:#4A4360; margin:0 0 16px">所以我很明白，走到職涯中途想轉彎時，那種既想改變、又害怕一切重新開始的感覺。</p>
-        <div style="background:#FDEEE4; border-radius:16px; padding:30px 32px; margin:8px 0 30px">
+        <div data-box="1" style="background:#FDEEE4; border-radius:16px; padding:30px 32px; margin:8px 0 30px">
           <p style="font-size:16.5px; line-height:1.8; letter-spacing:-0.045em; color:#35304A; font-weight:700; margin:0 0 12px">轉職不是把過去歸零，而是看懂你已經擁有什麼，再把它帶到更適合你的地方。</p>
           <p style="font-size:15.5px; line-height:1.8; letter-spacing:-0.045em; color:#4A4360; margin:0">這也是我現在想陪你一起找到的下一步。</p>
         </div>
@@ -429,7 +431,7 @@
         <p style="font-size:16.5px; color:#6B6480; margin:0">他們也曾經不知道，下一步可以去哪裡</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px, 100%), 1fr)); gap:28px">
-        <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
+        <figure data-slide="1" data-box="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
           <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「原來我不是只能繼續做現在的工作。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:1.8; color:#6B6480; margin:0">我在科技業做了 13 年，已經做到主管。一直想離開，卻覺得換跑道就代表以前全部白費。</p>
@@ -437,7 +439,7 @@
           </blockquote>
           <figcaption style="margin-top:auto; padding-top:14px; border-top:1px solid #F4E9F3; font-size:14px; color:#8B5FA8; font-weight:500">Angela，42 歲｜科技業專案主管</figcaption>
         </figure>
-        <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
+        <figure data-slide="1" data-box="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
           <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「我本來以為，我需要的是勇氣。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:1.8; color:#6B6480; margin:0">這兩年我一直告訴自己要勇敢辭職，但每次真的要走又退縮。</p>
@@ -446,7 +448,7 @@
           </blockquote>
           <figcaption style="margin-top:auto; padding-top:14px; border-top:1px solid #F4E9F3; font-size:14px; color:#8B5FA8; font-weight:500">Jason，45 歲｜金融業中階主管</figcaption>
         </figure>
-        <figure data-slide="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
+        <figure data-slide="1" data-box="1" style="margin:0; background:#fff; border:1.5px solid #D9BFE4; border-radius:22px; padding:38px 34px; box-shadow:0 14px 36px rgba(139,95,168,0.10); display:flex; flex-direction:column; gap:16px">
           <h3 class="ms19" style="font-size:19px; line-height:1.7; font-weight:600; margin:0">「第一次覺得，十幾年的經驗不是包袱。」</h3>
           <blockquote style="margin:0; display:flex; flex-direction:column; gap:14px">
             <p style="font-size:15px; line-height:1.8; color:#6B6480; margin:0">我最害怕的是已經 40 歲，轉職是不是太晚。</p>
