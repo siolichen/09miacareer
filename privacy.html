@@ -22,8 +22,9 @@
 <style>
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #FBF7F3; color: #35304A; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; -webkit-font-smoothing: antialiased; }
-  html { overflow-x: clip; }
-  body { overflow-x: clip; max-width: 100%; }
+  html { max-width: 100%; }
+  body { overflow-x: hidden; max-width: 100%; }
+  @supports (overflow-x: clip) { body { overflow-x: clip; } }
   img, svg { max-width: 100%; }
   * { box-sizing: border-box; }
   a { color: #8B5FA8; text-decoration: none; }
